@@ -46,3 +46,19 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+ /* || Etch Grid */
+ #etchGrid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 400px;
+    margin: 100px auto;
+ }
+ .etchGridCell{
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+ }
+ .etchGridCell:hover{
+    background-color: yellow;
+ }
