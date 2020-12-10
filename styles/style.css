@@ -47,15 +47,35 @@ table {
 	border-spacing: 0;
 }
 
- /* || Etch Grid */
+/* || Reset Button */
+#resetButton{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 20px;
+    width: 600px;
+    height: 40px;
+    align-items: center;
+    border-radius: 20px;
+    border: none;
+}
+#resetButton:hover{
+    background-color: hsl(0 0% 90%);
+}
+#resetButton:active{
+    background-color: hsl(0 0% 35%);
+    color: white;
+}
+
+/* || Etch Grid */
  #etchGrid{
     display: grid;
     grid-template-columns: auto auto auto auto;
-    width: 400px;
-    margin: 100px auto;
- }
+    width: 408px;
+    margin: 0 auto;
+    border: 2px solid green;
+ }  
  .etchGridCell{
-    border: 1px solid black;
+    border: 1px solid green;
     height: 100px;
     width: 100px;
  }
