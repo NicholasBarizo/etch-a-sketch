@@ -1,5 +1,10 @@
 const etchGrid = document.getElementById('etchGrid');
+
+
 createGrid();
+etchGrid.addEventListener('mouseover', (event) => {
+    event.target.style.backgroundColor = 'black';
+});
 function createGrid(){
     for(i = 1; i <= 16; i++){
         const newGridCell = document.createElement('div');
