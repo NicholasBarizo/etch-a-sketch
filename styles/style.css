@@ -46,6 +46,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+:root{
+    --gridCellHeight: 100px;
+    --gridCellWidth: 100px;
+    --gridWidthPixels: 80%;
+}
+
 /* USER INPUT */
     /* || Reset Button */
 #resetButton{
@@ -135,15 +143,15 @@ table {
 
     grid-template-columns: auto auto auto auto;
     justify-content: flex-start;
-    width: 400px;
+    width: var(--gridWidthPixels);
     margin: 0 auto;
     border: 2px solid green;
 
  }  
  .etchGridCell{
     border: 1px solid hsl(0 0% 95%);
-    height: 100px;
-    width: 100px;
+    height: var(--gridCellHeight);
+    width: var(--gridCellWidth);
     grid-column-gap: 0px;
     box-sizing: border-box;
  }
