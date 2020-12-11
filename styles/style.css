@@ -60,7 +60,7 @@ table {
     display: flex;
     justify-content: center;
     margin: 20px auto 20px;
-    width: 600px;
+    width: 60%;
     height: 40px;
     align-items: center;
     border-radius: 20px;
@@ -149,7 +149,7 @@ table {
 
  }  
  .etchGridCell{
-    border: 1px solid hsl(0 0% 95%);
+    border: .1px solid hsl(0 0% 95%);
     height: var(--gridCellHeight);
     width: var(--gridCellWidth);
     grid-column-gap: 0px;

@@ -9,38 +9,35 @@ let gridWidth = 4;
 let gridCellCount = gridHeight * gridWidth;
 let root = document.querySelector(':root');
 createGrid();
-// etchGridCell[1].style.width ='50px';
 resetButton.addEventListener('click', () => {
     
     etchGrid.style.display = 'none';
-    inputDimensions.style.display = 'flex';
-    // for (i = 0; i <= 16; i++){
-    //     etchGridCell.forEach(function(element){
-    //         element.style.backgroundColor = 'white'
-    //     });
-    // }
+    inputDimensions.style.display = 'block';
+
 });
 
 confirmGridDimensions.addEventListener('click', function(){
-    while (etchGrid.firstChild){
-        etchGrid.removeChild(etchGrid.firstChild);
-    }
     gridWidth = inputDimensionButtons[0].value;
     gridHeight = inputDimensionButtons[1].value;
-    gridCellCount = gridWidth * gridHeight;
-    createGrid();
+
+    if(gridHeight % 1 == 0 && gridWidth % 1 ==  0) { 
+        etchGrid.style.display ='grid';
+        while (etchGrid.firstChild){
+            etchGrid.removeChild(etchGrid.firstChild);
+        }
+        
+        gridCellCount = gridWidth * gridHeight;
+        createGrid();
+    }
+
 });
 window.addEventListener('resize', () => {
     fitGridToWindow();
 });
 
-document.getElementById('setColumn').addEventListener('click', function() {
-    // root.style.setProperty('--gridCellWidth', 100 / gridWidth +'%');
-    root.style.setProperty('--gridCellWidth', etchGrid.offsetWidth * .25 + "px");
-});
 
 function createGrid(){
-
+    inputDimensions.style.display ='none';
     // Set Grid Column Count
     let setGridColumns = 'auto';
     for (i = 1; i < gridWidth; i++){
