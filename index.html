@@ -9,13 +9,14 @@
         <button id="resetButton">Reset</button>
         <div id="etchGrid"></div>
         <div id="inputDimensions">
-            <form id="inputDimensionButtons">
+            <form id="inputDimensionButtons" onsubmit ='return false'>
                 <input type="text" id="gridWidthInput" maxlength="2">
                 <input type="text" id="gridHeightInput" maxlength="2">
                 <input id="confirmGridDimensions" type='submit' value='Confirm'>
             </form>
             <p id="gridWidthInputText">Width:</h2>
             <p id="gridHeightInputText">Height:</h2>
+            <button id="setColumn">setColumn</button>
         </div>
         <script src="scripts/javascript.js"></script>
     </body>

@@ -132,13 +132,18 @@ table {
 /* || Etch Grid */
  #etchGrid{
     display: grid;
+
     grid-template-columns: auto auto auto auto;
-    width: 408px;
+    justify-content: flex-start;
+    width: 400px;
     margin: 0 auto;
     border: 2px solid green;
+
  }  
  .etchGridCell{
-    border: 1px solid green;
+    border: 1px solid hsl(0 0% 95%);
     height: 100px;
     width: 100px;
+    grid-column-gap: 0px;
+    box-sizing: border-box;
  }
