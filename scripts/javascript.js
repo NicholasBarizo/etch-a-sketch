@@ -31,25 +31,12 @@ confirmGridDimensions.addEventListener('click', function(){
     createGrid();
 });
 window.addEventListener('resize', () => {
-    if(window.innerWidth > window.innerHeight){
-        let gridHeightWidth = window.innerHeight / gridHeight * .8 + 'px';
-        // let setGridCellWidth = window.innerWidth / gridWidth + 'px';
-        root.style.setProperty('--gridWidthPixels', etchGrid.offsetHeight + 'px');
-        root.style.setProperty('--gridCellHeight', gridHeightWidth);
-        root.style.setProperty('--gridCellWidth', etchGrid.offsetWidth / gridWidth + 'px');
-        
-    }
-    else{
-        // root.style.setProperty('--gridCellHeight', '3px');
-        root.style.setProperty('--gridWidthPixels', '80%');
-        root.style.setProperty('--gridCellHeight', etchGrid.offsetWidth / gridHeight + 'px');
-        root.style.setProperty('--gridCellWidth', window.innerWidth / gridWidth * .8 + 'px');
-        // root.style.setProperty('--gridWidthPixels', );
-    }
+    fitGridToWindow();
 });
 
 document.getElementById('setColumn').addEventListener('click', function() {
-    root.style.setProperty('--gridCellHeight', '3px');
+    // root.style.setProperty('--gridCellWidth', 100 / gridWidth +'%');
+    root.style.setProperty('--gridCellWidth', etchGrid.offsetWidth * .25 + "px");
 });
 
 function createGrid(){
@@ -73,18 +60,21 @@ function createGrid(){
 
     }
     // Set Cell Dimensions
-    let widthPixels = etchGrid.offsetWidth / gridWidth;
-    etchGrid.height = etchGrid.offsetWidth;
-    let heightPixels = etchGrid.offsetHeight / gridHeight;
-    for(i = 0; i < gridCellCount; i++){
-        
-        root.style.setProperty('--gridCellHeight', heightPixels + 'px');
-        root.style.setProperty('--gridCellWidth', widthPixels + 'px');
-        // etchGridCell[i].style.width = widthPixels + 'px';
-        // etchGridCell[i].style.height = heightPixels + 'px';
+    fitGridToWindow();   
+    
+}
 
+function fitGridToWindow(){
+    if(window.innerWidth > window.innerHeight){
+        root.style.setProperty('--gridCellHeight', window.innerHeight / gridHeight * .8 + 'px');
+        root.style.setProperty('--gridWidthPixels', etchGrid.offsetHeight + 'px');
+        root.style.setProperty('--gridCellWidth', etchGrid.offsetWidth / gridWidth + 'px');
         
     }
-   
-    
+    else{
+        root.style.setProperty('--gridWidthPixels', '80%');
+        root.style.setProperty('--gridCellHeight', etchGrid.offsetWidth / gridHeight + 'px');
+        root.style.setProperty('--gridCellWidth', etchGrid.offsetWidth / gridWidth + "px");
+
+    }
 }
