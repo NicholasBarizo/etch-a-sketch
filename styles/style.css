@@ -74,6 +74,9 @@ table {
     background-color: hsl(0 0% 35%);
     color: white;
 }
+#resetButton:focus{
+    outline: none;
+}
     /* || INPUT PANEL */
 #resetPanel{
     width: 300px;
