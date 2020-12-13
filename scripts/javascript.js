@@ -93,8 +93,11 @@ function createGrid(){
             newGridCell.id = 'cell' + i;
             
             etchGrid.appendChild(newGridCell);
+            let opacity = 100;
             newGridCell.addEventListener('mouseover', () =>{
-
+                opacity -= 10;
+                let darkenColor = 'hsl(0 0% ' + opacity + '%';
+                newGridCell.style.backgroundColor = darkenColor;
             });
         }
     }
