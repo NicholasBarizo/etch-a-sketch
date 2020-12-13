@@ -1,6 +1,6 @@
 const etchGrid = document.getElementById('etchGrid');
 const resetButton = document.getElementById('resetButton');
-const inputDimensions = document.getElementById('inputDimensions');
+const resetPanel = document.getElementById('resetPanel');
 const confirmGridDimensions = document.getElementById('confirmGridDimensions');
 const inputDimensionButtons = document.getElementById('inputDimensionButtons');
 const etchGridCell = document.getElementsByClassName('etchGridCell');
@@ -13,7 +13,7 @@ createGrid();
 resetButton.addEventListener('click', () => {
     
     etchGrid.style.display = 'none';
-    inputDimensions.style.display = 'block';
+    resetPanel.style.display = 'block';
     resetButton.style.display ='none';
 
 });
@@ -40,7 +40,7 @@ window.addEventListener('resize', () => {
 
 
 function createGrid(){
-    inputDimensions.style.display ='none';
+    resetPanel.style.display ='none';
     // Set Grid Column Count
     let setGridColumns = 'auto';
     for (i = 1; i < gridWidth; i++){

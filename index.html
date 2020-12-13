@@ -8,14 +8,32 @@
     <body>
         <button id="resetButton">Reset</button>
         <div id="etchGrid"></div>
-        <div id="inputDimensions">
+        <div id="resetPanel">
             <form id="inputDimensionButtons" onsubmit ='return false'>
                 <input type="text" id="gridWidthInput" maxlength="2" required>
                 <input type="text" id="gridHeightInput" maxlength="2" required>
+                
+                <label class='penContainer'>Solid Pen
+                    <input type='radio' id='solidPen' name='penType'>
+                    <span class='etchCheckmark'></span>
+                </label>
+                <label class='penContainer'>Rainbow Pen
+                    <input type='radio' id='rainbowPen' name='penType'>
+                    <span class='etchCheckmark'></span>
+                </label>
+                <label class='penContainer'>Darken Pen
+                    <input type='radio' id='darkenPen' name='penType'>
+                    <span class='etchCheckmark'></span>
+                </label>
+                <label id='gridContainer'>Grid
+                    <input type='checkbox' id='gridCheck' name='gridCheck'>
+                    <span id='gridCheckboxNew'></span>
+                </label>
+
                 <input id="confirmGridDimensions" type='submit' value='Confirm'>
             </form>
             <p id="gridWidthInputText">Width:</h2>
-            <p id="gridHeightInputText">Height:</h2>
+            <p id="gridHeightInputText">Height:</h2>         
         </div>
         <script src="scripts/javascript.js"></script>
     </body>
