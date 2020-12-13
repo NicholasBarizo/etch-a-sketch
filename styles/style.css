@@ -52,6 +52,7 @@ table {
     --gridCellHeight: 100px;
     --gridCellWidth: 100px;
     --gridWidthPixels: 80%;
+    --etchGridCellBorder: .1px solid hsl(0 0% 95%);
 }
 
 /* USER INPUT */
@@ -224,7 +225,7 @@ table {
 
  }  
  .etchGridCell{
-    border: .1px solid hsl(0 0% 95%);
+    border: var(--etchGridCellBorder);
     height: var(--gridCellHeight);
     width: var(--gridCellWidth);
     grid-column-gap: 0px;

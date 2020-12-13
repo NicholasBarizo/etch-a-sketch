@@ -31,6 +31,13 @@ confirmGridDimensions.addEventListener('click', function(){
         gridCellCount = gridWidth * gridHeight;
         createGrid();
         resetButton.style.display ='block';
+        let gridChecked = document.getElementById('gridCheck');
+        if (gridChecked.checked) {
+            root.style.setProperty('--etchGridCellBorder', '1px solid hsl(0 0% 95%)');
+        }
+        else{
+            root.style.setProperty('--etchGridCellBorder', 'none');
+        }
     }
 
 });
