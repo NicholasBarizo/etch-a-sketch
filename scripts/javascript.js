@@ -74,14 +74,14 @@ function createGrid(){
 function fitGridToWindow(){
     if(window.innerWidth > window.innerHeight){
         root.style.setProperty('--gridCellHeight', window.innerHeight / gridHeight * .8 + 'px');
-        root.style.setProperty('--gridWidthPixels', etchGrid.offsetHeight + 'px');
-        root.style.setProperty('--gridCellWidth', etchGrid.offsetWidth / gridWidth + 'px');
+        root.style.setProperty('--gridWidthPixels', window.innerHeight * .8 + 'px');
+        root.style.setProperty('--gridCellWidth', window.innerHeight / gridHeight * .8 + 'px');
         
     }
     else{
         root.style.setProperty('--gridWidthPixels', '80%');
         root.style.setProperty('--gridCellHeight', etchGrid.offsetWidth / gridHeight + 'px');
-        root.style.setProperty('--gridCellWidth', etchGrid.offsetWidth / gridWidth + "px");
+        root.style.setProperty('--gridCellWidth', (window.innerWidth * .8) / gridWidth  + 'px');
 
     }
 }

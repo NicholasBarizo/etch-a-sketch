@@ -216,7 +216,6 @@ table {
 /* || Etch Grid */
  #etchGrid{
     display: grid;
-
     grid-template-columns: auto auto auto auto;
     justify-content: flex-start;
     width: var(--gridWidthPixels);
