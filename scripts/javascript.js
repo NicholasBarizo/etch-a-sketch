@@ -108,7 +108,7 @@ function fitGridToWindow(){
     if(window.innerWidth > window.innerHeight){
         root.style.setProperty('--gridCellHeight', window.innerHeight / gridHeight * .8 + 'px');
         root.style.setProperty('--gridWidthPixels', window.innerHeight * .8 + 'px');
-        root.style.setProperty('--gridCellWidth', window.innerHeight / gridHeight * .8 + 'px');
+        root.style.setProperty('--gridCellWidth', window.innerHeight / gridWidth * .8 + 'px');
         
     }
     else{
