@@ -21,7 +21,7 @@ resetButton.addEventListener('click', () => {
 confirmGridDimensions.addEventListener('click', function(){
     gridWidth = inputDimensionButtons[0].value;
     gridHeight = inputDimensionButtons[1].value;
-
+    
     if(gridHeight > 0 && gridWidth  > 0) { 
         etchGrid.style.display ='grid';
         while (etchGrid.firstChild){
@@ -56,16 +56,49 @@ function createGrid(){
     etchGrid.style.gridTemplateColumns = setGridColumns;
 
     // Create Grid Cells
-    for(i = 1; i <= gridCellCount; i++){
-        const newGridCell= document.createElement('div');
-        newGridCell.classList.add('etchGridCell');
-        newGridCell.id = 'cell' + i;
-        newGridCell.addEventListener('mouseover', () => {
-            newGridCell.style.backgroundColor = 'black';
-        });
-        etchGrid.appendChild(newGridCell);
-
+    let penType = document.querySelector('input[name=penType]:checked').value;
+    if(penType == 'solidPen'){
+        for(i = 1; i <= gridCellCount; i++){
+            const newGridCell= document.createElement('div');
+            newGridCell.classList.add('etchGridCell');
+            newGridCell.id = 'cell' + i;
+        
+            etchGrid.appendChild(newGridCell);
+            newGridCell.addEventListener('mouseover', () => {
+                newGridCell.style.backgroundColor = 'black';
+            });
+        }
     }
+    if(penType == 'rainbowPen'){
+        for(i = 1; i <= gridCellCount; i++){
+            const newGridCell= document.createElement('div');
+            newGridCell.classList.add('etchGridCell');
+            newGridCell.id = 'cell' + i;
+            
+            etchGrid.appendChild(newGridCell);
+            newGridCell.addEventListener('mouseover', () => {
+                let randomParameter1 = Math.floor(Math.random() * 255);
+                let randomParameter2 = Math.floor(Math.random() * 255);
+                let randomParameter3 = Math.floor(Math.random() * 255);
+
+                newGridCell.style.backgroundColor = 'rgb(' +randomParameter1 + ', ' + 
+                        randomParameter2 + ', ' + randomParameter3 + ')';
+            });
+        }
+    }
+    if(penType == 'darkenPen'){
+        for(i = 1; i <= gridCellCount; i++){
+            const newGridCell= document.createElement('div');
+            newGridCell.classList.add('etchGridCell');
+            newGridCell.id = 'cell' + i;
+            
+            etchGrid.appendChild(newGridCell);
+            newGridCell.addEventListener('mouseover', () =>{
+
+            });
+        }
+    }
+
     // Set Cell Dimensions
     fitGridToWindow();   
     
