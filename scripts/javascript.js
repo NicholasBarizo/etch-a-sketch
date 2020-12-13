@@ -9,10 +9,12 @@ let gridWidth = 4;
 let gridCellCount = gridHeight * gridWidth;
 let root = document.querySelector(':root');
 createGrid();
+
 resetButton.addEventListener('click', () => {
     
     etchGrid.style.display = 'none';
     inputDimensions.style.display = 'block';
+    resetButton.style.display ='none';
 
 });
 
@@ -20,7 +22,7 @@ confirmGridDimensions.addEventListener('click', function(){
     gridWidth = inputDimensionButtons[0].value;
     gridHeight = inputDimensionButtons[1].value;
 
-    if(gridHeight % 1 == 0 && gridWidth % 1 ==  0) { 
+    if(gridHeight > 0 && gridWidth  > 0) { 
         etchGrid.style.display ='grid';
         while (etchGrid.firstChild){
             etchGrid.removeChild(etchGrid.firstChild);
@@ -28,6 +30,7 @@ confirmGridDimensions.addEventListener('click', function(){
         
         gridCellCount = gridWidth * gridHeight;
         createGrid();
+        resetButton.style.display ='block';
     }
 
 });
